@@ -1,0 +1,24 @@
+---
+title: "r markdown project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library("knitr")
+source("analysis.R")
+```
+According to the Hofstede dataset, here is the individual summary for the mean, min, and max  `r idv_summary_df`. The max individualistic country is `r max_country` and the min individualistic country is `r min_country` 
+
+### Summary of individualism values:
+```{r, echo=FALSE}
+kable(idv_summary2_df)
+```
+
+### table of countries sorted by individualism scores:
+```{r, echo=FALSE}
+kable(idv_data_df)
+```
